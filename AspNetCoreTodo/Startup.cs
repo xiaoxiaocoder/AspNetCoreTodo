@@ -43,7 +43,10 @@ namespace AspNetCoreTodo
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddSingleton<ITodoItemService, FakeTodoItemService>();
+            //services.AddSingleton<ITodoItemService, FakeTodoItemService>();
+
+            // 以**scoped**的生命周期把服务添加到容器中. 这意味着每次web请求中,一个TodoItemService类的新实例就会被创建出来.
+            services.AddScoped<ITodoItemService, TodoItemService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

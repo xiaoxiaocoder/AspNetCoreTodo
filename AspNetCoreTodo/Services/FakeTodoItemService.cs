@@ -10,6 +10,11 @@ namespace AspNetCoreTodo.Services
         {
         }
 
+        public Task<bool> AddItemAsync(TodoItem model)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<TodoItem[]> GetIncompleteItemAsync()
         {
             var item1 = new TodoItem
