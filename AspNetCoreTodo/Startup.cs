@@ -13,6 +13,7 @@ using AspNetCoreTodo.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AspNetCoreTodo.Services;
+using AspNetCoreTodo.Models;
 
 namespace AspNetCoreTodo
 {
@@ -38,15 +39,25 @@ namespace AspNetCoreTodo
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //https://stackoverflow.com/questions/44483589/unable-to-resolve-service-for-type-microsoft-aspnetcore-identity-usermanager-w
+            //services.AddIdentity<ApplicationUser, IdentityRole>()
+                //.AddEntityFrameworkStores<ApplicationDbContext>()
+                //.AddDefaultTokenProviders();
+
 
             //services.AddSingleton<ITodoItemService, FakeTodoItemService>();
 
             // 以**scoped**的生命周期把服务添加到容器中. 这意味着每次web请求中,一个TodoItemService类的新实例就会被创建出来.
             services.AddScoped<ITodoItemService, TodoItemService>();
+
+            services.AddAuthentication();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

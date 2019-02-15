@@ -6,9 +6,8 @@
     <title>@ViewData["Title"] - AspNetCoreTodo</title>
 
     <environment include="Development">
-        @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
-            
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
@@ -40,6 +39,7 @@
                     <li><a asp-controller="Todo" asp-action="Index">My to-dos</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
+                <partial name="_AdminActionsPartial" />
             </div>
         </div>
     </nav>
@@ -55,10 +55,8 @@
     </div>
 
     <environment include="Development">
-        @*<script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">

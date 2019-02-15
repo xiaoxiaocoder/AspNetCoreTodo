@@ -23,5 +23,9 @@
   <ItemGroup>
     <Folder Include="Views\Todo\" />
     <Folder Include="Services\" />
+    <Folder Include="Views\ManageUsers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\ManageUsersViewModel.cs" />
   </ItemGroup>
 </Project>

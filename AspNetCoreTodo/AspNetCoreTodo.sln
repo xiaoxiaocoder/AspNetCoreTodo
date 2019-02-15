@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreTodo", "AspNetCoreTodo.csproj", "{6427777E-0844-4E52-926F-FCD237E53E7E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D1DC6AB7-4439-4FF6-88B2-4FBBE2A849E0}"
+	ProjectSection(SolutionItems) = preProject
+		.gitingore = .gitingore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
